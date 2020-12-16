@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+.chessB{
+display: block;
+justify-content: space-around;
+align-items: center;
+margin-top: 0;
+width: 80vw;
+height: auto;
+margin-left: 100px;
+margin-top: 50px;
+margin-bottom: 100px;
+flex-wrap: wrap;
+
+}
+.home{
+background-color: #34626c;
+height: 100vh;
+
+}
+.heading{
+text-align: center;
+color: #fff;
+padding-top:20px;
+font-size: 1.2rem;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+@media screen and ( max-width: 500px){
+
+.chessB{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+text-align: center;
+margin-left: 19px;
+margin-right: 16px;
+      width: 90vw;
+      height: auto;
+      flex-wrap: wrap;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
