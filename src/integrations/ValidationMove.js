@@ -2,8 +2,13 @@ import React,{Component} from "react";
 import PropTypes from "prop-types";
 import Chess from "chess.js";
 import Chessboard from "chessboardjsx";
+import moveSound from './chess-t.mp3';
+import {Howl,Howler} from 'howler';
 import '../App.css';
 
+// const audioClips= [
+// {sound: moveSound, label: 'chess'}
+// ]
 class ManualHuman extends Component{
 
 static propTypes = {children: PropTypes.func};
@@ -26,7 +31,22 @@ history:[]
 componentDidMount(){
 this.game = new Chess();
 }
+soundPlay = (src) => {
+const sound = new Howl ({
+src: [moveSound]
+})
+sound.play();
+}
 
+renderButtonSound = () => {
+
+return (
+<button onClick = { () => this.soundPlay()}>
+
+</button>
+)
+
+}
 removeHighlightSquare = () => {
  this.setState(({pieceSquare , history }) => ({
 
@@ -65,7 +85,7 @@ squareStyles: {...squareStyles, ...highlightStyles}
 };
 
 onDrop = ({sourceSquare, targetSquare}) => {
-
+this.soundPlay();
 let move = this.game.move({
 from: sourceSquare,
 to: targetSquare,
@@ -79,6 +99,8 @@ fen: this.game.fen(),
 history: this.game.history({ verbose: true }),
 squareStyles: squareStyling({pieceSquare , history})
 }));
+
+
 
 };
 
