@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Chess from "chess.js";
 import Chessboard from "chessboardjsx";
 import moveSound from './chess-t.mp3';
-import {Howl,Howler} from 'howler';
+import {Howl} from 'howler';
 import '../App.css';
 
 // const audioClips= [
